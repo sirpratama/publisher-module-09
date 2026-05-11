@@ -27,3 +27,9 @@ When the publisher runs (`cargo run`), it sends 5 events to the `user_created` q
 **Publisher run** — successfully compiled and sent all 5 events:
 
 ![Publisher Run](images/Screenshot 2026-05-11 233939.png)
+
+## Monitoring Chart Based on Publisher
+
+Each time the publisher runs, it sends 5 events to RabbitMQ. The spike visible in the RabbitMQ management chart below corresponds to those bursts of messages being published. The more times the publisher runs in quick succession, the more spikes appear on the message rate chart.
+
+![RabbitMQ Spike](images/purple spike.png)
