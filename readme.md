@@ -15,3 +15,15 @@ Both the publisher and the subscriber use the **exact same broker URL**, which m
 RabbitMQ is running via Docker on `localhost:5672` (AMQP) and `localhost:15672` (management UI). The screenshot below shows the management dashboard confirming the broker is active and ready to accept connections.
 
 ![RabbitMQ Running](images/rabbitmq.png)
+
+## Sending and Processing Event
+
+When the publisher runs (`cargo run`), it sends 5 events to the `user_created` queue on RabbitMQ. The subscriber, which is already listening, receives and processes each event one by one, printing the message to the console.
+
+**Subscriber console** — messages received from the broker:
+
+![Subscriber Console](images/Screenshot 2026-05-11 233903.png)
+
+**Publisher run** — successfully compiled and sent all 5 events:
+
+![Publisher Run](images/Screenshot 2026-05-11 233939.png)
